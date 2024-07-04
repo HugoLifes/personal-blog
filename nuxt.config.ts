@@ -2,12 +2,19 @@
 import { defineNuxtConfig } from "nuxt/config"
 
 export default defineNuxtConfig({
-  routeRules: {
-    "/" : {ssr:false}
+  ssr:true,
+  future: {
+    compatibilityVersion: 4
   },
   devtools: { enabled: true },
   tres:{
-    glsl:true
+    modules: ['@tresjs/cientos'],
+    devtools:true,
+  },
+  nitro:{
+    routeRules:{
+      '/':{ssr:false}
+    }
   },
   compatibilityDate: "2024-07-03",
   modules: ["@nuxt/fonts", "@tresjs/nuxt"]

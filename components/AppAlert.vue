@@ -1,14 +1,21 @@
-<template>
-    <TresCanvas clear-color="#82DBC5" >
-        <TresPerspectiveCamera />
-        <TresMesh>
-            <TresBoxGeometry :args="[1,1,1]"/>
-            <TresMeshBasicMaterial color="orange"/>
-        </TresMesh>
-        <TresAmbientLight :intensity="1"/>
+<script setup lang="ts">
 
+</script>
+
+<template>
+    <TresCanvas clear-color='#4f4f4f' window-size  >
+      <TresPerspectiveCamera />
+      <OrbitControls />
+     
+      <Suspense>
+        <Stone/>
+      </Suspense>
+      <TresGridHelper/>
     </TresCanvas>
 </template>
+
+
+
 
 
 
