@@ -1,7 +1,8 @@
 <template>
   
-    <h1> Hi There! Developers</h1>
+    <div>
     <AppAlert color="#FBB03B"></AppAlert>
-  
-  <NuxtPage />
+    
+    </div>
+    <NuxtPage/>
 </template>

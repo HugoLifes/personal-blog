@@ -9,6 +9,7 @@ stoneBakedTexture.flipY= false
 const StoneMaterial = new MeshBasicMaterial({
   map: stoneBakedTexture
 })
+
 nodes.Stone.material = StoneMaterial
 nodes.StoneCarved.material = StoneMaterial
 
@@ -17,14 +18,22 @@ littleStonesBakedTexture.flipY = false
 const littleStonesBakedMaterial = new MeshBasicMaterial({
   map: littleStonesBakedTexture
 })
-const littleStones = Object.values(nodes).filter(node => node.name.includes('Stone00'))
+
+
+const littleStones = Object.values(nodes).filter((node) => node.name.includes('Stone00'))
+
 littleStones.forEach((stone)=>{
   stone.material = littleStonesBakedMaterial
 })
 
 //intentar cambiar colores e intensidad
-materials.RockLight.color = 'blue'
-materials.RockLight.emissiveIntensity = 1
+materials.RockLight.emissiveIntensity = 10
+
+const { onLoop } = useRenderLoop()
+
+onLoop(({ elapsed }) => {
+  materials.RockLight.emissiveIntensity = Math.sin(elapsed) * 6 + 7
+})
 
 console.log(materials)
 
