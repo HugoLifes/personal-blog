@@ -33,10 +33,12 @@ console.log(bloomParams)
         <Stone/>
       </Suspense>
 
-      <TresGridHelper/>
       <EffectComposer>
         <Bloom v-bind="bloomParams" />
       </EffectComposer>
+      
+      <TresGridHelper/>
+      
     </TresCanvas>
 </template>
 
